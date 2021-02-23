@@ -32,6 +32,8 @@ function bnToBig(val: BN, denomination = 0): Big {
 
 function keyToKeypair(key: string, chainID: string = 'X'): AVMKeyPair {
     let hrp = getPreferredHRP(ava.getNetworkID())
+    console.log('hrp is: ', hrp)
+    console.log('chain ID is: ', chainID)
     let keychain = new AVMKeyChain(hrp, chainID)
     return keychain.importKey(key)
 }

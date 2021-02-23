@@ -134,6 +134,7 @@ export default class CustomPage extends Vue {
 
         // check for HTTP HTTPS on url
         let url = this.url
+        console.log(url)
 
         if (url.substr(0, 7) !== 'http://' && url.substr(0, 8) !== 'https://') {
             err = 'URLs require the appropriate HTTP/HTTPS prefix.'

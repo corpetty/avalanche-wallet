@@ -27,11 +27,11 @@ class AvaNetwork {
         this.explorerUrl = explorerUrl
         this.explorerSiteUrl = explorerSiteUrl
         this.protocol = 'http'
-        this.port = 9650
-        this.ip = 'localhost'
+        this.port = 9655
+        this.ip = '192.168.1.218'   
         this.url = url
         this.updateURL(url)
-        this.networkId = networkId
+        this.networkId = 115110116
         // this.chainId = chainId;
         this.readonly = readonly
         // this.fee = new BN(0);

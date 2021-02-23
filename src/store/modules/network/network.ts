@@ -102,6 +102,7 @@ const network_module: Module<NetworkState, RootState> = {
             state.status = 'connecting'
             ava.setAddress(net.ip, net.port, net.protocol)
             ava.setNetworkID(net.networkId)
+            console.log('Network ID is: ', net.networkId)
 
             // Reset transaction history
             commit('History/clear', null, { root: true })
@@ -110,6 +111,7 @@ const network_module: Module<NetworkState, RootState> = {
             let chainIdX = await infoApi.getBlockchainID('X')
             let chainIdP = await infoApi.getBlockchainID('P')
             let chainIdC = await infoApi.getBlockchainID('C')
+            console.log('chainID for C is: ', chainIdC)
 
             avm.refreshBlockchainID(chainIdX)
             avm.setBlockchainAlias('X')
@@ -181,6 +183,14 @@ const network_module: Module<NetworkState, RootState> = {
                 'https://explorer.avax-test.network',
                 true
             )
+            let statalanche = new AvaNetwork(
+                'Statalanche',
+                'http://192.168.1.218:9655',
+                115110116,
+                '',
+                '',
+                true
+            )
 
             // Load custom networks if any
             try {
@@ -190,6 +200,7 @@ const network_module: Module<NetworkState, RootState> = {
             }
 
             // commit('addNetwork', netTest);
+            commit('addNetwork', statalanche)
             commit('addNetwork', manhattan)
             commit('addNetwork', fuji)
 

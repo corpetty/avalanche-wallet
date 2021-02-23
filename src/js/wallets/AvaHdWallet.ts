@@ -400,7 +400,7 @@ export default class AvaHdWallet extends HdWalletCore implements IAvaHdWallet {
         if (utxoSet.getAllUTXOs().length === 0) {
             throw new Error('Nothing to import.')
         }
-
+        console.log('import object: ', this)
         let toAddress = '0x' + this.ethAddress
         let ownerAddresses = [this.ethAddressBech]
         let fromAddresses = ownerAddresses

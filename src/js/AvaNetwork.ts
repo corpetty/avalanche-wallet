@@ -28,7 +28,7 @@ class AvaNetwork {
         this.explorerSiteUrl = explorerSiteUrl
         this.protocol = 'http'
         this.port = 9655
-        this.ip = '192.168.1.218'   
+        this.ip = 'localhost'
         this.url = url
         this.updateURL(url)
         this.networkId = 115110116
